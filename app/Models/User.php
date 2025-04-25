@@ -21,11 +21,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'contry_id',
-        'state_id',
-        'city_id',
-        'address',
-        'postal_code'
     ];
 
     /**
@@ -47,22 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function contry()
-    {
-        return $this->belongsTo(Country::class);
-    }
-    public function calendars(){
-        return $this->belongsToMany(calendar::class);
-    }
-    public function departaments(){
-        return $this->belongsToMany(departament::class);
-    }
-    public function holiday(){
-        return $this->belongsToMany(holiday::class);
-    }
-    public function timessheets(){
-        return $this->belongsToMany(timessheet::class);
-    }
-    
-
 }
