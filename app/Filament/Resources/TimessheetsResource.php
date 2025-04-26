@@ -16,8 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class TimessheetsResource extends Resource
 {
     protected static ?string $model = Timessheets::class;
+    protected static ?string $navigationGroup = 'Vacation Management';
+    protected static ?int $navigationSort = 7;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
@@ -27,7 +29,7 @@ class TimessheetsResource extends Resource
             Forms\Components\Select::make('calendar_id')
             ->relationship(name: 'calendar', titleAttribute: 'name')
                 ->required(),
-                Forms\Components\Select::make('calendar_id')
+                Forms\Components\Select::make('user_id')
             ->relationship(name: 'user', titleAttribute: 'name')
                 ->required(),
                 Forms\Components\Select::make('type')

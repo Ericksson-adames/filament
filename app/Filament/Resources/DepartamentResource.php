@@ -19,8 +19,10 @@ use function Laravel\Prompts\table;
 class DepartamentResource extends Resource
 {
     protected static ?string $model = Departament::class;
+    protected static ?string $navigationGroup = 'Vacation Management';
+    protected static ?int $navigationSort = 8;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     public static function form(Form $form): Form
     {
