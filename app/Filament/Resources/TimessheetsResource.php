@@ -55,6 +55,7 @@ class TimessheetsResource extends Resource
             ->columns([
                 //
                 Tables\Columns\TextColumn::make('calendar.name')
+                ->label('calendario')
                 ->sortable()
                 ->searchable(),
                 Tables\Columns\TextColumn::make('user.name')
