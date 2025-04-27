@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -54,17 +55,22 @@ class TimessheetsResource extends Resource
             ->columns([
                 //
                 Tables\Columns\TextColumn::make('calendar.name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
                 Tables\Columns\TextColumn::make('user.name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
                 Tables\Columns\TextColumn::make('type')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
                 Tables\Columns\TextColumn::make('day_in')
                 ->dateTime()
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
                 Tables\Columns\TextColumn::make('day_out')
                 ->dateTime()
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             ])
             ->filters([
                 //
@@ -73,6 +79,7 @@ class TimessheetsResource extends Resource
                     "work"=>'in working',
                     "pause"=> 'in pause'
                 ])
+               
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
