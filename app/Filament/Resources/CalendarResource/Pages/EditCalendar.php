@@ -9,6 +9,12 @@ use Filament\Resources\Pages\EditRecord;
 class EditCalendar extends EditRecord
 {
     protected static string $resource = CalendarResource::class;
+      //funcion para devolverme para la pagina de inicio
+      protected function getRedirectUrl(): string
+      {
+          return $this->getResource()::getUrl('index');
+      }
+  
 
     protected function getHeaderActions(): array
     {

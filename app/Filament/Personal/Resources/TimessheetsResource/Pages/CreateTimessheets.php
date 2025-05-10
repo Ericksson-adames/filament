@@ -15,7 +15,7 @@ class CreateTimessheets extends CreateRecord
     {
         return $this->getResource()::getUrl('index');
     }
-
+   //funcion para que automaticamente se agregue el usuario que esta logueado
     protected function mutateFormDataBeforeCreate(array $data): array
 {
     $data['user_id'] = Auth::user()->id;
